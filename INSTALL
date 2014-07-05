@@ -1,0 +1,20 @@
+
+1. Donwload and install the pymilter library. 
+   On FreeBSD you can do this by running  "pkg install py-milter"
+
+2. Copy the tumilter.py somewhere on your Mailserver
+
+3. Edit tumilter.py and chanege the recipients = XX to a number 
+   which fits your needs.
+
+4. Assuming you have copied the tumilter.py file to the directory
+   /usr/local/etc/ and your postfix daemon is running as user 
+   postfix you can start the tumilter with a command like this:
+
+   nohup su -m postfix -c '/usr/local/bin/python /usr/local/etc/tumilter.py' >/dev/null &
+
+5. Add the following line to your postfix main.cf
+   smtpd_milters = unix:/tmp/tumilter
+
+6. Restaqrt postfix
+
