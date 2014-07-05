@@ -2,7 +2,7 @@
 1. Donwload and install the pymilter library. 
    On FreeBSD you can do this by running  "pkg install py-milter"
 
-2. Copy the tumilter.py somewhere on your Mailserver
+2. Copy the tumilter.py file somewhere on your Mailserver
 
 3. Edit tumilter.py and chanege the recipients = XX to a number 
    which fits your needs.
@@ -16,5 +16,5 @@
 5. Add the following line to your postfix main.cf
    smtpd_milters = unix:/tmp/tumilter
 
-6. Restaqrt postfix
+6. Restart postfix
 
